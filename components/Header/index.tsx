@@ -9,7 +9,7 @@ export interface HeaderProps {
 export const Header = ({ title }: HeaderProps) => {
   return (
     <div className="flex justify-between items-center px-14 bg-white h-[68px]">
-      <div className="font-extrabold text-2xl">{title}</div>
+      <h1 className="font-extrabold text-2xl">{title}</h1>
 
       <div className="flex items-center gap-10">
         <Button variant="contained" className="rounded-md">
