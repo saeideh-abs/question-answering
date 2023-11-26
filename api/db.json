@@ -1,0 +1,23 @@
+{
+  "questions": [
+  {
+    "id": "1",
+    "user":{"profile": "http://localhost:5000/images/profile.jpg"},
+    "title": "مشکل در Auth در React",
+    "text": "سلام من میخوام یه authentication ساده تو react بسازم اما این error رو بهم میده. نمیدونم مشکل از کجاست. عکس خروجی console رو هم گذاشتم که ببینید دقیقا چه مشکلی وجود داره",
+    "date": "۱۴۰۰/۲/۱۵",
+    "time": "۱۶:۴۸",
+    "answers_count": 20
+  },
+  {
+    "id": "2",
+    "user":{"profile": "http://localhost:5000/images/profile.jpg"},
+    "title": "مشکل Auth  در React",
+    "text": "کسی میتونه به من کمک کنه؟",
+    "date": "۱۴۰۰/۲/۱۵",
+    "time": "۱۶:۴۸",
+    "answers_count": 20
+  }
+]
+
+}

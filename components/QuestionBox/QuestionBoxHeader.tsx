@@ -9,7 +9,13 @@ export const QuestionBoxHeader = ({ question }: QuestionBoxHeaderProps) => {
   return (
     <div className="h-12 bg-white rounded-lg shadow-qa px-4 flex items-center justify-between">
       <div className="flex gap-4 items-center">
-        <Avatar alt="profile photo" className="w-8 h-8" roundedFull={false} />
+        <Avatar
+          src={question.user.profile}
+          alt="profile photo"
+          width={32}
+          height={32}
+          roundedFull={false}
+        />
         <h2 className="font-bold text-base m-0">{question.title}</h2>
       </div>
 
