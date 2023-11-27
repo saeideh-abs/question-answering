@@ -5,6 +5,7 @@ import { Button, ErrorMessage, Textarea } from '@/components'
 import { useCreateAnswer } from '@/api/answer'
 import { AnswerType, UserType } from '@/types'
 import { useAuthStore } from '@/stores/auth'
+import { useQuestionsList, useUpdateQuestion } from '@/api/question'
 
 const formSchema = z.object({
   text: z.string().min(2, { message: 'متن پاسخ حداقل باید 2 کاراکتر باشد.' }),
@@ -24,10 +25,11 @@ export default function NewAnswer({ qid }: { qid: string }) {
   })
 
   const user: UserType = useAuthStore(state => state.user)
+  const { data: question } = useQuestionsList(qid)
   const createAnswerMu = useCreateAnswer()
+  const updateQuestionMu = useUpdateQuestion()
 
   const onSubmit = (data: z.infer<typeof formSchema>) => {
-    console.log(data)
     const answer: AnswerType = {
       id: String(new Date().getTime()),
       qid: qid,
@@ -42,6 +44,14 @@ export default function NewAnswer({ qid }: { qid: string }) {
       onSuccess() {
         reset()
         console.log('inserted successfully')
+        // update answers_count
+        updateQuestionMu.mutate(
+          { id: qid, answers_count: question.answers_count + 1 },
+          {
+            onSuccess: () => console.log('answers_count was updated'),
+            onError: () => console.log('failed to update answers_count'), // to do
+          },
+        )
       },
       onError: (error: any) => {
         console.log(error)

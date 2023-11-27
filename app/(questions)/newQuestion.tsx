@@ -41,7 +41,7 @@ export const NewQuestion = () => {
       title: data.subject,
       text: data.text,
       datetime: new Date().toISOString(),
-      answers_count: 14,
+      answers_count: 0,
     }
     createQuestionMu.mutate(question, {
       onSuccess() {

@@ -1,16 +1,16 @@
 {
   "user": {
-    "firstName": "مهلا",
-    "lastName": "حبیبی",
-    "id": "user1",
+    "firstName": "ستاره",
+    "lastName": "محجوبی",
+    "id": "user2",
     "profile": "http://localhost:5000/images/profile.jpg"
   },
   "users": [
     {
-    "firstName": "مهلا",
-    "lastName": "حبیبی",
-    "id": "user1",
-    "profile": "http://localhost:5000/images/profile.jpg"
+      "firstName": "مهلا",
+      "lastName": "حبیبی",
+      "id": "user1",
+      "profile": "http://localhost:5000/images/profile.jpg"
     },
     {
       "firstName": "ستاره",
@@ -30,7 +30,7 @@
       "datetime": "2023-11-27T08:28:55.113Z",
       "date": "۱۴۰۰/۲/۱۵",
       "time": "۱۶:۴۸",
-      "answers_count": 20
+      "answers_count": 2
     },
     {
       "id": "2",
@@ -42,7 +42,7 @@
       "datetime": "2023-11-27T08:28:55.113Z",
       "date": "۱۴۰۰/۲/۱۵",
       "time": "۱۶:۴۸",
-      "answers_count": 20
+      "answers_count": 3
     },
     {
       "id": "1701070922032",
@@ -57,7 +57,7 @@
       "datetime": "2023-11-27T08:28:55.113Z",
       "date": "20/14/",
       "time": "14:30",
-      "answers_count": 14
+      "answers_count": 2
     },
     {
       "id": "1701074916300",
@@ -70,7 +70,20 @@
       "title": "این یه سواله",
       "text": "این یه سواله باحاله",
       "datetime": "2023-11-27T08:48:36.300Z",
-      "answers_count": 14
+      "answers_count": 5
+    },
+    {
+      "id": "1701096365806",
+      "user": {
+        "firstName": "مهلا",
+        "lastName": "حبیبی",
+        "id": "user1",
+        "profile": "http://localhost:5000/images/profile.jpg"
+      },
+      "title": "hiiiiii every body",
+      "text": "this a question",
+      "datetime": "2023-11-27T14:46:05.806Z",
+      "answers_count": 0
     }
   ],
   "answers": [
@@ -101,6 +114,143 @@
       "datetime": "2023-11-27T11:14:14.932Z",
       "likes": [],
       "dislikes": []
+    },
+    {
+      "id": "1701095937375",
+      "qid": "1701074916300",
+      "user": {
+        "firstName": "مهلا",
+        "lastName": "حبیبی",
+        "id": "user1",
+        "profile": "http://localhost:5000/images/profile.jpg"
+      },
+      "text": "پاسخ تستتتت",
+      "datetime": "2023-11-27T14:38:57.375Z",
+      "likes": [],
+      "dislikes": []
+    },
+    {
+      "id": "1701095966628",
+      "qid": "1701070922032",
+      "user": {
+        "firstName": "مهلا",
+        "lastName": "حبیبی",
+        "id": "user1",
+        "profile": "http://localhost:5000/images/profile.jpg"
+      },
+      "text": "یک عدد پاسخ تست",
+      "datetime": "2023-11-27T14:39:26.628Z",
+      "likes": [],
+      "dislikes": []
+    },
+    {
+      "id": "1701096037877",
+      "qid": "1701070922032",
+      "user": {
+        "firstName": "مهلا",
+        "lastName": "حبیبی",
+        "id": "user1",
+        "profile": "http://localhost:5000/images/profile.jpg"
+      },
+      "text": "new one",
+      "datetime": "2023-11-27T14:40:37.877Z",
+      "likes": [],
+      "dislikes": []
+    },
+    {
+      "id": "1701096066761",
+      "qid": "1701074916300",
+      "user": {
+        "firstName": "مهلا",
+        "lastName": "حبیبی",
+        "id": "user1",
+        "profile": "http://localhost:5000/images/profile.jpg"
+      },
+      "text": "sggsfdgdsgfdgfs",
+      "datetime": "2023-11-27T14:41:06.761Z",
+      "likes": [],
+      "dislikes": []
+    },
+    {
+      "id": "1701096166511",
+      "qid": "1",
+      "user": {
+        "firstName": "مهلا",
+        "lastName": "حبیبی",
+        "id": "user1",
+        "profile": "http://localhost:5000/images/profile.jpg"
+      },
+      "text": "this is an answerrrrr",
+      "datetime": "2023-11-27T14:42:46.511Z",
+      "likes": [],
+      "dislikes": [
+        "user2"
+      ]
+    },
+    {
+      "id": "1701096201304",
+      "qid": "2",
+      "user": {
+        "firstName": "مهلا",
+        "lastName": "حبیبی",
+        "id": "user1",
+        "profile": "http://localhost:5000/images/profile.jpg"
+      },
+      "text": "switch it on/off",
+      "datetime": "2023-11-27T14:43:21.304Z",
+      "likes": [],
+      "dislikes": []
+    },
+    {
+      "id": "1701099841675",
+      "qid": "2",
+      "user": {
+        "firstName": "مهلا",
+        "lastName": "حبیبی",
+        "id": "user1",
+        "profile": "http://localhost:5000/images/profile.jpg"
+      },
+      "text": "بله بله",
+      "datetime": "2023-11-27T15:44:01.675Z",
+      "likes": [
+        "user1"
+      ],
+      "dislikes": [
+        "user2"
+      ]
+    },
+    {
+      "id": "1701100031174",
+      "qid": "2",
+      "user": {
+        "firstName": "مهلا",
+        "lastName": "حبیبی",
+        "id": "user1",
+        "profile": "http://localhost:5000/images/profile.jpg"
+      },
+      "text": "یه روز دیگه",
+      "datetime": "2023-11-27T15:47:11.174Z",
+      "likes": [
+        "user1",
+        "user2"
+      ],
+      "dislikes": []
+    },
+    {
+      "id": "1701100425515",
+      "qid": "1",
+      "user": {
+        "firstName": "ستاره",
+        "lastName": "محجوبی",
+        "id": "user2",
+        "profile": "http://localhost:5000/images/profile.jpg"
+      },
+      "text": "این کد:\ndata?.map((answer: AnswerType) => (\n            <QuestionAnswerBox\n              variant=\"answer\"\n              key={answer.id}\n              data={answer}\n              footer={\n                <FeedBack\n                  onLike={() => handleLikeDislike(answer, 'like')}\n                  onDislike={() => handleLikeDislike(answer, 'dislike')}\n                />\n              }\n            />\n          ))",
+      "datetime": "2023-11-27T15:53:45.515Z",
+      "likes": [],
+      "dislikes": [
+        "user2"
+      ]
     }
   ]
 }

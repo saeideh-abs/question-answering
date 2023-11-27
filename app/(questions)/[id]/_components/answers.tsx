@@ -1,12 +1,27 @@
-import { useAnswersList } from '@/api/answer'
-import { Button } from '@/components'
+import { useAnswersList, useUpdateAnswer } from '@/api/answer'
 import { QuestionAnswerBox } from '@/components/QuestionAnswerBox'
-import { IconHappy, IconSad } from '@/icons'
 import { AnswerType } from '@/types'
-import { cn } from '@/utils'
+import { FeedBack } from './feedback'
+import { useUser } from '@/api/user'
 
 export default function Answers({ qid }: { qid: string }) {
   const { data } = useAnswersList(qid)
+  const { data: user } = useUser()
+  const updateAnswerMu = useUpdateAnswer()
+
+  const handleLikeDislike = (answer: AnswerType, type: 'like' | 'dislike') => {
+    if (type === 'like') {
+      const likes = new Set(answer.likes)
+      likes.add(user.id)
+      const dislikes = answer.dislikes.filter(i => i !== user.id)
+      updateAnswerMu.mutate({ id: answer.id, likes: [...likes], dislikes })
+    } else {
+      const dislikes = new Set(answer.dislikes)
+      dislikes.add(user.id)
+      const likes = answer.likes.filter(i => i !== user.id)
+      updateAnswerMu.mutate({ id: answer.id, likes, dislikes: [...dislikes] })
+    }
+  }
 
   return (
     <div className="flex flex-col gap-4">
@@ -20,40 +35,16 @@ export default function Answers({ qid }: { qid: string }) {
               variant="answer"
               key={answer.id}
               data={answer}
-              footer={<FeedBack />}
+              footer={
+                <FeedBack
+                  onLike={() => handleLikeDislike(answer, 'like')}
+                  onDislike={() => handleLikeDislike(answer, 'dislike')}
+                />
+              }
             />
           ))
         )}
       </div>
-    </div>
-  )
-}
-
-const FeedBack = () => {
-  const buttonStyle = `text-xs font-bold p-0 w-[126px] h-9 leading-4 border-secondary-so-light hover:border-secondary-so-light`
-
-  return (
-    <div className="flex gap-3 self-end">
-      <Button
-        variant="outlined"
-        color="success"
-        className={cn('text-annotation-success', buttonStyle)}
-      >
-        <div className="flex gap-2 items-center">
-          <IconHappy className="w-5 h-5 text-annotation-success" />
-          پاسخ خوب بود
-        </div>
-      </Button>
-      <Button
-        variant="outlined"
-        color="error"
-        className={cn('text-annotation-error', buttonStyle)}
-      >
-        <div className="flex gap-2 items-center">
-          <IconSad className="w-5 h-5 text-annotation-error" />
-          پاسخ خوب نبود
-        </div>
-      </Button>
     </div>
   )
 }

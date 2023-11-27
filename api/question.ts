@@ -42,3 +42,24 @@ export function useCreateQuestion() {
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ['questions-list'] })
   });
 }
+
+export function useUpdateQuestion() {
+  const queryClient = useQueryClient()
+
+  return useMutation({
+    mutationFn: async (data: Partial<QuestionType> & { id: string }) => {
+      try {
+        const res = await axios({
+          method: 'patch',
+          url: `/questions/${data.id}`,
+          data,
+        })
+        return res.data
+
+      } catch (error) {
+        throw error
+      }
+    },
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['questions-list'] })
+  });
+}
