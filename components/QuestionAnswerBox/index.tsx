@@ -1,6 +1,5 @@
 import { AnswerType, QuestionType } from '@/types'
 import { QuestionBoxHeader } from './QuestionBoxHeader'
-import { ReactNode } from 'react'
 
 export type QuestionAnswerBoxProps<
   T extends 'question' | 'answer' = 'question',

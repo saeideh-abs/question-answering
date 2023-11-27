@@ -10,7 +10,7 @@ export function useQuestionsList(id?: string) {
       try {
         const res = await axios({
           method: 'get',
-          url: id ? `/questions/${id}` : `/questions`,
+          url: id ? `/questions/${id}` : `/questions?_sort=datetime&_order=desc`,
         })
         return res.data
       } catch (error) {

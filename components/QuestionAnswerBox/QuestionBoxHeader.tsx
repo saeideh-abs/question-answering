@@ -8,6 +8,7 @@ export interface QuestionBoxHeaderProps {
   variant?: 'question' | 'answer'
   data: QuestionType | AnswerType
 }
+
 export const QuestionBoxHeader = ({
   variant = 'question',
   data,

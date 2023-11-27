@@ -9,7 +9,7 @@ export function useAnswersList(qid: string, id?: string) {
       try {
         const res = await axios({
           method: 'get',
-          url: id ? `/amswers/${id}` : `/answers?qid=${qid}`,
+          url: id ? `/amswers/${id}` : `/answers?qid=${qid}&_sort=datetime&_order=desc`,
         })
         return res.data
       } catch (error) {
