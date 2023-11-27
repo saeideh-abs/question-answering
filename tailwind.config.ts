@@ -12,6 +12,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      height: {
+        header: '68px',
+      },
+      margin: {
+        header: '68px',
+      },
       fontSize: {
         '2xs': '0.625rem',
       },

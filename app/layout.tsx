@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import '@/styles/tailwind.css'
+import '@/styles/global.css'
 import { Header } from '@/components'
 import { iranYekan } from '@/styles/fonts'
 import { cn } from '@/utils'
@@ -23,7 +23,7 @@ export default function RootLayout({
           <QueryProvider>
             <div className="flex flex-col h-screen">
               <Header />
-              <main className="grow bg-secondary-lightest py-8 px-14">
+              <main className="grow bg-secondary-lightest py-8 px-14 mt-header overflow-auto">
                 {children}
               </main>
             </div>

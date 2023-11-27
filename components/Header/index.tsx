@@ -25,7 +25,7 @@ export const Header = () => {
   }, [user, setUser])
 
   return (
-    <div className="flex justify-between items-center px-14 bg-white h-[68px]">
+    <div className="flex justify-between items-center px-14 bg-white h-header fixed right-0 left-0 top-0">
       <h1 className="font-extrabold text-2xl">
         {pathname === '/' ? 'لیست سوالات' : 'جزئیات سوال'}
       </h1>

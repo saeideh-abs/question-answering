@@ -84,6 +84,19 @@
       "text": "this a question",
       "datetime": "2023-11-27T14:46:05.806Z",
       "answers_count": 0
+    },
+    {
+      "id": "1701109876696",
+      "user": {
+        "firstName": "ستاره",
+        "lastName": "محجوبی",
+        "id": "user2",
+        "profile": "http://localhost:5000/images/profile.jpg"
+      },
+      "title": "دسترسی به تم tailwind در جاوااسکریپت",
+      "text": "چگونه به تم tailwind  در جاوااسکریپت دسترسی پیدا کنم؟",
+      "datetime": "2023-11-27T18:31:16.696Z",
+      "answers_count": 0
     }
   ],
   "answers": [
@@ -127,7 +140,9 @@
       "text": "پاسخ تستتتت",
       "datetime": "2023-11-27T14:38:57.375Z",
       "likes": [],
-      "dislikes": []
+      "dislikes": [
+        "user2"
+      ]
     },
     {
       "id": "1701095966628",
