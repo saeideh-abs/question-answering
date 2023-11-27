@@ -7,12 +7,10 @@ import { useShallow } from 'zustand/react/shallow'
 import { useUser } from '@/api/user'
 import { useAuthStore } from '@/stores/auth'
 import { useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 
-export interface HeaderProps {
-  title: string
-}
-
-export const Header = ({ title }: HeaderProps) => {
+export const Header = () => {
+  const pathname = usePathname()
   const { data: user } = useUser()
   const { openModal, setOpenModal } = useQuestionsStore(
     useShallow(state => ({
@@ -28,7 +26,9 @@ export const Header = ({ title }: HeaderProps) => {
 
   return (
     <div className="flex justify-between items-center px-14 bg-white h-[68px]">
-      <h1 className="font-extrabold text-2xl">{title}</h1>
+      <h1 className="font-extrabold text-2xl">
+        {pathname === '/' ? 'لیست سوالات' : 'جزئیات سوال'}
+      </h1>
 
       <div className="flex items-center gap-10">
         <Button

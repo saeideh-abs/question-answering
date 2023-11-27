@@ -22,7 +22,7 @@ export default function RootLayout({
         <MuiThemeProvider>
           <QueryProvider>
             <div className="flex flex-col h-screen">
-              <Header title="لیست سوالات" />
+              <Header />
               <main className="grow bg-secondary-lightest py-8 px-14">
                 {children}
               </main>

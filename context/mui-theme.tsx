@@ -14,6 +14,7 @@ export const theme = createTheme({
   },
   palette: {
     primary: twTheme?.colors?.primary as PaletteColorOptions,
+    secondary: twTheme?.colors?.secondary as PaletteColorOptions,
   },
 })
 

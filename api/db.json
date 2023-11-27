@@ -5,6 +5,20 @@
     "id": "user1",
     "profile": "http://localhost:5000/images/profile.jpg"
   },
+  "users": [
+    {
+    "firstName": "مهلا",
+    "lastName": "حبیبی",
+    "id": "user1",
+    "profile": "http://localhost:5000/images/profile.jpg"
+    },
+    {
+      "firstName": "ستاره",
+      "lastName": "محجوبی",
+      "id": "user2",
+      "profile": "http://localhost:5000/images/profile.jpg"
+    }
+  ],
   "questions": [
     {
       "id": "1",
@@ -57,6 +71,36 @@
       "text": "این یه سواله باحاله",
       "datetime": "2023-11-27T08:48:36.300Z",
       "answers_count": 14
+    }
+  ],
+  "answers": [
+    {
+      "id": "1701083585142",
+      "qid": "1701074916300",
+      "user": {
+        "firstName": "ستاره",
+        "lastName": "محجوبی",
+        "id": "user2",
+        "profile": "http://localhost:5000/images/profile.jpg"
+      },
+      "text": "این یه پاسخ چیپسه",
+      "datetime": "2023-11-27T11:13:05.142Z",
+      "likes": [],
+      "dislikes": []
+    },
+    {
+      "id": "1701083654932",
+      "qid": "1701074916300",
+      "user": {
+        "firstName": "مهلا",
+        "lastName": "حبیبی",
+        "id": "user1",
+        "profile": "http://localhost:5000/images/profile.jpg"
+      },
+      "text": "جواب من اینه",
+      "datetime": "2023-11-27T11:14:14.932Z",
+      "likes": [],
+      "dislikes": []
     }
   ]
 }
