@@ -2,6 +2,7 @@
 import {
   createTheme,
   PaletteColorOptions,
+  StyledEngineProvider,
   ThemeProvider,
 } from '@mui/material/styles'
 import twTheme from '@/tailwind-theme'
@@ -19,5 +20,9 @@ export const theme = createTheme({
 })
 
 export const MuiThemeProvider = ({ children }: PropsWithChildren) => {
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>
+  return (
+    <StyledEngineProvider injectFirst={false}>
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+    </StyledEngineProvider>
+  )
 }
