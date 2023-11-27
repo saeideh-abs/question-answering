@@ -1,10 +1,9 @@
 export interface QuestionType {
   id: string
-  user: { profile: string }
+  user: UserType
   title: string
   text: string
-  date: string
-  time: string
+  datetime: string
   answers_count: number
 }
 
@@ -12,5 +11,5 @@ export type UserType = {
   id: string
   firstName: string
   lastName: string
-  profilePhoto: string
-} 
+  profile: string
+} | undefined

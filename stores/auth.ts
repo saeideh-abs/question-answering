@@ -3,7 +3,7 @@ import { create } from 'zustand'
 
 
 type AuthState = {
-  user: UserType | undefined
+  user: UserType
   setUser: (user: UserType) => void
 }
 

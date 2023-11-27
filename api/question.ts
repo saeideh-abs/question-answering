@@ -1,14 +1,16 @@
+import { QuestionType } from '@/types';
 import axios from './axiosConfig/axiosDefaultConf'
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
-export function useQuestionsList() {
+
+export function useQuestionsList(id?: string) {
   return useQuery({
-    queryKey: ['questions-list'],
+    queryKey: id ? ['questions-list', id] : ['questions-list'],
     queryFn: async () => {
       try {
         const res = await axios({
           method: 'get',
-          url: '/questions',
+          url: id ? `/questions/${id}` : `/questions`,
         })
         return res.data
       } catch (error) {
@@ -17,4 +19,26 @@ export function useQuestionsList() {
     },
   }
   );
+}
+
+
+export function useCreateQuestion() {
+  const queryClient = useQueryClient()
+
+  return useMutation({
+    mutationFn: async (data: QuestionType) => {
+      try {
+        const res = await axios({
+          method: 'post',
+          url: '/questions',
+          data,
+        })
+        return res.data
+
+      } catch (error) {
+        throw error
+      }
+    },
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['questions-list'] })
+  });
 }

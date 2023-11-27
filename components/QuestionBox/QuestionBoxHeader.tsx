@@ -1,16 +1,23 @@
 import { Avatar } from '@/components'
 import IconComment from '@/icons/components/IconComment'
 import { QuestionType } from '@/types'
+import { LOCALE } from '@/utils/constants'
 
 export interface QuestionBoxHeaderProps {
   question: Omit<QuestionType, 'text'>
 }
 export const QuestionBoxHeader = ({ question }: QuestionBoxHeaderProps) => {
+  const date = new Date(question.datetime).toLocaleDateString(LOCALE)
+  const time = new Date(question.datetime).toLocaleTimeString(LOCALE, {
+    hour: '2-digit',
+    minute: '2-digit',
+  })
+
   return (
     <div className="h-12 bg-white rounded-lg shadow-qa px-4 flex items-center justify-between">
       <div className="flex gap-4 items-center">
         <Avatar
-          src={question.user.profile}
+          src={question.user?.profile}
           alt="profile photo"
           width={32}
           height={32}
@@ -21,9 +28,9 @@ export const QuestionBoxHeader = ({ question }: QuestionBoxHeaderProps) => {
 
       <div className="flex gap-7 items-center">
         <div className="flex items-center gap-3">
-          <DateTime label="ساعت :" value={question.time} />
+          <DateTime label="ساعت :" value={time} />
           <Divider />
-          <DateTime label="تاریخ :" value={question.date} />
+          <DateTime label="تاریخ :" value={date} />
         </div>
 
         <div className="flex items-center gap-1">

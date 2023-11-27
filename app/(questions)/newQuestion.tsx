@@ -4,6 +4,10 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
 import { useQuestionsStore } from '@/stores/questions'
+import { useAuthStore } from '@/stores/auth'
+import { QuestionType, UserType } from '@/types'
+import { useCreateQuestion } from '@/api/question'
+import { IconSpinner } from '@/icons'
 
 const formSchema = z.object({
   subject: z.string().min(3, { message: 'موضوع حداقل باید 3 کاراکتر باشد.' }),
@@ -27,10 +31,27 @@ export const NewQuestion = () => {
   })
 
   const setOpenModal = useQuestionsStore(state => state.setOpenModal)
+  const user: UserType = useAuthStore(state => state.user)
+  const createQuestionMu = useCreateQuestion()
 
-  const onSubmit = (data: z.infer<typeof formSchema>) => {
-    console.log(data)
-    setOpenModal(false)
+  const onSubmit = async (data: z.infer<typeof formSchema>) => {
+    const question: QuestionType = {
+      id: String(new Date().getTime()),
+      user: user,
+      title: data.subject,
+      text: data.text,
+      datetime: new Date().toISOString(),
+      answers_count: 14,
+    }
+    createQuestionMu.mutate(question, {
+      onSuccess() {
+        console.log('inserted successfully')
+        setOpenModal(false)
+      },
+      onError: (error: any) => {
+        console.log(error)
+      },
+    })
   }
 
   return (
@@ -57,7 +78,11 @@ export const NewQuestion = () => {
             انصراف
           </Button>
           <Button variant="contained" className={buttonStyle} type="submit">
-            ایجاد سوال
+            {createQuestionMu.isPending ? (
+              <IconSpinner className="w-5 h-5" />
+            ) : (
+              'ایجاد سوال'
+            )}
           </Button>
         </div>
       </div>
