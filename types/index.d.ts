@@ -1,4 +1,4 @@
-export interface Question {
+export interface QuestionType {
   id: string
   user: { profile: string }
   title: string
@@ -7,3 +7,10 @@ export interface Question {
   time: string
   answers_count: number
 }
+
+export type UserType = {
+  id: string
+  firstName: string
+  lastName: string
+  profilePhoto: string
+} 

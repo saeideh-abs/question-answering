@@ -1,9 +1,9 @@
 import { Avatar } from '@/components'
 import IconComment from '@/icons/components/IconComment'
-import { Question } from '@/types'
+import { QuestionType } from '@/types'
 
 export interface QuestionBoxHeaderProps {
-  question: Omit<Question, 'text'>
+  question: Omit<QuestionType, 'text'>
 }
 export const QuestionBoxHeader = ({ question }: QuestionBoxHeaderProps) => {
   return (

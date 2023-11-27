@@ -1,9 +1,9 @@
 import { Button } from '@/components'
-import { Question } from '@/types'
+import { QuestionType } from '@/types'
 import { QuestionBoxHeader } from './QuestionBoxHeader'
 
 export interface QuestionBoxProps {
-  question: Question
+  question: QuestionType
 }
 
 export const QuestionBox = ({ question }: QuestionBoxProps) => {

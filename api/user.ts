@@ -1,14 +1,14 @@
 import axios from './axiosConfig/axiosDefaultConf'
 import { useQuery } from "@tanstack/react-query";
 
-export function useQuestionsList() {
+export function useUser() {
   return useQuery({
-    queryKey: ['questions-list'],
+    queryKey: ['user'],
     queryFn: async () => {
       try {
         const res = await axios({
           method: 'get',
-          url: '/questions',
+          url: '/user',
         })
         return res.data
       } catch (error) {

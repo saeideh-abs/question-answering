@@ -4,18 +4,27 @@ import { IconArrowDown, IconPlus } from '@/icons'
 import { ProfileBox } from './ProfileBox'
 import { useQuestionsStore } from '@/stores/questions'
 import { useShallow } from 'zustand/react/shallow'
+import { useUser } from '@/api/user'
+import { useAuthStore } from '@/stores/auth'
+import { useEffect } from 'react'
 
 export interface HeaderProps {
   title: string
 }
 
 export const Header = ({ title }: HeaderProps) => {
+  const { data: user } = useUser()
   const { openModal, setOpenModal } = useQuestionsStore(
     useShallow(state => ({
       openModal: state.openModal,
       setOpenModal: state.setOpenModal,
     })),
   )
+  const setUser = useAuthStore(state => state.setUser)
+
+  useEffect(() => {
+    if (user) setUser(user)
+  }, [user, setUser])
 
   return (
     <div className="flex justify-between items-center px-14 bg-white h-[68px]">
@@ -34,7 +43,13 @@ export const Header = ({ title }: HeaderProps) => {
         </Button>
 
         <div className="flex gap-4 items-center">
-          <ProfileBox src="" alt="" name="الناز شاکردوست" />
+          <ProfileBox
+            src={user?.profile}
+            width={44}
+            height={44}
+            alt=""
+            name={user ? `${user.firstName} ${user.lastName}` : ''}
+          />
           <IconArrowDown className="w-5 h-5 cursor-pointer" />
         </div>
       </div>

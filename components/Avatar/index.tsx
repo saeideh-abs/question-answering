@@ -20,7 +20,6 @@ export const Avatar = ({
     <Image
       src={src || Profile}
       alt={alt}
-      // layout="fixed"
       className={cn(
         className,
         roundedFull ? 'rounded-full' : 'rounded-lg',

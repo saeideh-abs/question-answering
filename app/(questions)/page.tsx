@@ -3,7 +3,7 @@ import { useQuestionsList } from '@/api/question'
 import { Modal } from '@/components'
 import { QuestionBox } from '@/components/QuestionBox'
 import { useQuestionsStore } from '@/stores/questions'
-import { Question } from '@/types'
+import { QuestionType } from '@/types'
 import { useShallow } from 'zustand/react/shallow'
 import { NewQuestion } from './newQuestion'
 export default function QuestionsList() {
@@ -21,7 +21,7 @@ export default function QuestionsList() {
   return (
     <div className="flex flex-col gap-5">
       {data &&
-        data.map((item: Question) => (
+        data.map((item: QuestionType) => (
           <QuestionBox key={item.id} question={item} />
         ))}
 
