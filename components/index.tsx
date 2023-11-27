@@ -1,3 +1,7 @@
 export * from './Header'
 export * from './Button'
 export * from './Avatar'
+export * from './Modal'
+export * from './Inputs/Input'
+export * from './Inputs/Textarea'
+export * from './ErrorMessage'

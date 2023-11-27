@@ -1,3 +1,4 @@
+'use client'
 import { cn } from '@/utils'
 import MuiButton, { ButtonProps } from '@mui/material/Button'
 import { PropsWithChildren } from 'react'

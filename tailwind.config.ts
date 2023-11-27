@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import { iranYekan } from './styles/fonts'
 
 const config: Config = {
   corePlugins: {
@@ -22,12 +23,17 @@ const config: Config = {
           'so-light': '#E4E9EC',
         },
         gray: {
+          light: '#EEEEEE',
           lightest: '#F9F9F9',
           dark: '#777777',
           darker: '#454545',
         },
         common: {
           black: '#222222'
+        },
+        annotation: {
+          error: '#F16063',
+          success: '#66CB9F'
         }
       },
       boxShadow: {

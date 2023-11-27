@@ -1,4 +1,4 @@
-import { Avatar, AvatarProps } from '@/components'
+import { Avatar, AvatarProps } from '../Avatar'
 
 export type ProfileBoxProps = AvatarProps & { name?: string }
 
