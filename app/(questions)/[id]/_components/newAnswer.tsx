@@ -6,6 +6,7 @@ import { useCreateAnswer } from '@/api/answer'
 import { AnswerType, UserType } from '@/types'
 import { useAuthStore } from '@/stores/auth'
 import { useQuestionsList, useUpdateQuestion } from '@/api/question'
+import { IconSpinner } from '@/icons'
 
 const formSchema = z.object({
   text: z.string().min(2, { message: 'متن پاسخ حداقل باید 2 کاراکتر باشد.' }),
@@ -78,7 +79,12 @@ export default function NewAnswer({ qid }: { qid: string }) {
           <ErrorMessage text={errors.text?.message} />
         </div>
 
-        <Button variant="contained" className="w-[200px]" type="submit">
+        <Button
+          variant="contained"
+          className="w-[200px]"
+          isLoading={createAnswerMu.isPending}
+          type="submit"
+        >
           ارسال پاسخ
         </Button>
       </form>

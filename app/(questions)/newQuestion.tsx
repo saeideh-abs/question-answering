@@ -77,12 +77,13 @@ export const NewQuestion = () => {
           >
             انصراف
           </Button>
-          <Button variant="contained" className={buttonStyle} type="submit">
-            {createQuestionMu.isPending ? (
-              <IconSpinner className="w-5 h-5" />
-            ) : (
-              'ایجاد سوال'
-            )}
+          <Button
+            variant="contained"
+            className={buttonStyle}
+            isLoading={createQuestionMu.isPending}
+            type="submit"
+          >
+            ایجاد سوال
           </Button>
         </div>
       </div>
