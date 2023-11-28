@@ -28,7 +28,7 @@ const nextConfig = {
     return config
   },
   images: {
-    domains: ['localhost'],
+    domains: ['localhost', 'www.gravatar.com', 'i.pravatar.cc'],
   },
 
 }

@@ -19,7 +19,7 @@ export const QuestionAnswerBox = <T extends 'question' | 'answer'>({
       <QuestionBoxHeader variant={variant} data={data} />
 
       <div className="flex flex-col gap-4 p-4">
-        <p className="text-sm whitespace-pre">{data.text}</p>
+        <p className="text-sm whitespace-pre-wrap">{data.text}</p>
 
         {footer}
       </div>

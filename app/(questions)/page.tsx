@@ -11,7 +11,7 @@ export default function QuestionsList() {
 
   if (isLoading) return 'در حال بارگذاری...'
   if (error) return <div>خطایی رخ داده است.</div>
-  if (data.length === 0) return <div> داده ای برای نمایش وجود ندارد.</div>
+  if (data?.length === 0) return <div> داده ای برای نمایش وجود ندارد.</div>
 
   return (
     <div className="flex flex-col gap-5">
