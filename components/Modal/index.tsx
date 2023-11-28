@@ -1,4 +1,5 @@
 import { IconClose } from '@/icons'
+import { cn } from '@/utils'
 import MuiModal, { ModalProps as MuiModalProps } from '@mui/material/Modal'
 
 export type ModalProps =
@@ -15,11 +16,15 @@ export const Modal = ({
   children,
   title,
   showHeader,
+  bodyClassName,
   ...props
-}: ModalProps) => {
+}: ModalProps & { bodyClassName?: string }) => {
+  const bodyStyle = `rounded-lg shadow-qa bg-gray-lightest 
+    absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white`
+
   return (
     <MuiModal {...props}>
-      <div className="modal-body rounded-lg shadow-qa bg-gray-lightest absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white">
+      <div className={cn(bodyStyle, bodyClassName)}>
         {showHeader && <ModalHeader title={title} onClose={props.onClose} />}
         {children}
       </div>

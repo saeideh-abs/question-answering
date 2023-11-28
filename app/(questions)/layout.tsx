@@ -18,11 +18,12 @@ export default function Layout({ children }: PropsWithChildren) {
       {children}
       <Modal
         open={openModal}
-        onClose={() => setOpenModal(false)}
-        showHeader
         title="ایجاد سوال جدید"
+        showHeader
+        bodyClassName="w-[90%] md:w-[550px] lg:w-[700px]"
+        onClose={() => setOpenModal(false)}
       >
-        <div className="w-[700px] rounded-lg px-5 pt-5 pb-6 bg-gray-lightest">
+        <div className="rounded-lg px-5 pt-5 pb-6 bg-gray-lightest">
           <NewQuestion />
         </div>
       </Modal>
