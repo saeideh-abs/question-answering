@@ -42,7 +42,6 @@ export const ModalHeader = ({
   return (
     <div className="flex justify-between items-center px-6 py-3 rounded-lg bg-white shadow-qa opacity-70">
       <div className="font-extrabold leading-6">{title}</div>
-
       <IconClose
         className="w-5 h-5 cursor-pointer"
         onClick={e => onClose?.(e, 'backdropClick')}
